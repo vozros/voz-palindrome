@@ -19,7 +19,7 @@ String.prototype.reverse = function() {
   // For example:
   //   new Phrase("Hello, world!").letters() === "Helloworld"
   this.letters = function letters() {
-    return (this.content.match(/[a-z]/gi) || []).join("");
+    return Array.from(this.content).filter(c => c.match(/[a-z]/i)).join("");
   }
 	  
     // Returns true if the phrase is a palindrome, false otherwise.
